@@ -16,12 +16,12 @@ import lombok.ToString;
 public final class MultiplicationResultAttempt {
     private final User user;
     private final Multiplication multiplication;
-    private final int resultAttmpt;
+    private final int resultAttempt;
 
     //JSON (역)직렬화를 위한 빈 생성자
     MultiplicationResultAttempt() {
         user = null;
         multiplication = null;
-        resultAttmpt = -1;
+        resultAttempt = -1;
     }
 }
