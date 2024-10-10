@@ -12,6 +12,17 @@ function updateMultiplication() {
     });
 }
 
+function updateStats(alias) {
+    $.ajax({
+        url: "http://localhost:8081/results?alias=" + alias
+    }).then(function (data) {
+        $('#stats-body').empty();
+        data.forEach(function (row) {
+            $('#stats-body').append('<tr><td></td>')
+        })
+    })
+}
+
 $(document).ready(function () {
     updateMultiplication();
 
