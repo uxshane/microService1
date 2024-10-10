@@ -4,6 +4,10 @@ package microservices.book.socialmultiplication.domain;
 * 애플리케이션에서 곱셈을 나타내는 클래스
 * */
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -13,12 +17,19 @@ import lombok.ToString;
 @Getter
 @ToString
 @EqualsAndHashCode
+@Entity
 public final class Multiplication {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MULTIPLICATION_ID")
+    private Long id;
+
     //두 인수
     private final int factorA;
     private final int factorB;
 
-    Multiplication() {
+    protected Multiplication() {
         this(0,0);
     }
 }

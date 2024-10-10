@@ -12,6 +12,17 @@ function updateMultiplication() {
     });
 }
 
+function updateStats(alias) {
+    $.ajax({
+        url: "http://localhost:8081/results?alias=" + alias
+    }).then(function (data) {
+        $('#stats-body').empty();
+        data.forEach(function (row) {
+            $('#stats-body').append('<tr><td></td>')
+        })
+    })
+}
+
 $(document).ready(function () {
     updateMultiplication();
 
@@ -39,6 +50,7 @@ $(document).ready(function () {
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
+            async: false,
             success: function (result) {
                 if (result.correct) {
                     $('.result-message').empty().append("정답입니다! 축하드려요!");
