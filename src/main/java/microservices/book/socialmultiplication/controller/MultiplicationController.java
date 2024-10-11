@@ -23,5 +23,3 @@ public class MultiplicationController {
         return multiplicationService.createRandomMultiplication();
     }
 }
-
-// testing to see if ubuntu vscode works
